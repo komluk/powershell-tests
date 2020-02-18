@@ -1,0 +1,16 @@
+pr:
+- develop
+    
+pool: 'SCB managed Windows Build Agents'
+    
+steps:
+- task: PowerShell@2
+    inputs:
+    filePath: 'tests\Invoke-Test.ps1'
+    failOnStderr: true
+    workingDirectory: 'tests'
+- task: PublishTestResults@2
+    inputs:
+    testResultsFormat: 'NUnit'
+    testResultsFiles: '**\tests\*.xml'
+    failTaskOnFailedTests: true
