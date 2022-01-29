@@ -1,7 +1,7 @@
 pr:
 - develop
     
-pool: 'SCB managed Windows Build Agents'
+pool: 'agent-name'
     
 steps:
 - task: PowerShell@2
